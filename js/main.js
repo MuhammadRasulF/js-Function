@@ -1,3 +1,5 @@
+alert('Let\'s work with DOM on JS!')
+
 const data = [
   { 
     src: 'https://picsum.photos/200/300?random=1',
