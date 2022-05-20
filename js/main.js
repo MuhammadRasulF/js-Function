@@ -1,4 +1,4 @@
-alert('Let\'s work with DOM on JS!')
+// alert('Let\'s work with DOM on JS!')
 
 const data = [
   { 
@@ -103,82 +103,21 @@ const data = [
 ];
 
 
+const elUsers = document.querySelectorAll('.user');
+
+for( let i = 0; i < 11; i++) {
 // All img
-
-const userImage = document.querySelectorAll('.user__img');
-userImage[0].src = data[0].src
-userImage[1].src = data[1].src
-userImage[2].src = data[2].src
-userImage[3].src = data[3].src
-userImage[4].src = data[4].src
-userImage[5].src = data[5].src
-userImage[6].src = data[6].src
-userImage[7].src = data[7].src
-userImage[8].src = data[8].src
-userImage[9].src = data[9].src
-userImage[10].src = data[10].src
-
-
+elUsers[i].querySelector('.user__img').src = data[i].src
 
 // All name
-
-const userName = document.querySelectorAll('.user__fullname')
-userName[0].textContent = data[0].first_name + ' ' + data[0].last_name;
-userName[1].textContent = data[1].first_name + ' ' + data[1].last_name;
-userName[2].textContent = data[2].first_name + ' ' + data[2].last_name;
-userName[3].textContent = data[3].first_name + ' ' + data[3].last_name;
-userName[4].textContent = data[4].first_name + ' ' + data[4].last_name;
-userName[5].textContent = data[5].first_name + ' ' + data[5].last_name;
-userName[6].textContent = data[6].first_name + ' ' + data[6].last_name;
-userName[7].textContent = data[7].first_name + ' ' + data[7].last_name;
-userName[8].textContent = data[8].first_name + ' ' + data[8].last_name;
-userName[9].textContent = data[9].first_name + ' ' + data[9].last_name;
-userName[10].textContent = data[10].first_name + ' ' + data[10].last_name;
-
+elUsers[i].querySelector('.user__fullname').textContent = `${data[i].first_name} ${data[i].last_name}`;
 
 // All email
-
-const userEmail = document.querySelectorAll('.user__email')
-userEmail[0].textContent = data[0].email
-userEmail[1].textContent = data[1].email
-userEmail[2].textContent = data[2].email
-userEmail[3].textContent = data[3].email
-userEmail[4].textContent = data[4].email
-userEmail[5].textContent = data[5].email
-userEmail[6].textContent = data[6].email
-userEmail[7].textContent = data[7].email
-userEmail[8].textContent = data[8].email
-userEmail[9].textContent = data[9].email
-userEmail[10].textContent = data[10].email
-
+elUsers[i].querySelector('.user__email').textContent = data[i].email
 
 // All gender
-
-const userGender = document.querySelectorAll('.user__gender')
-userGender[0].textContent = data[0].gender;
-userGender[1].textContent = data[1].gender;
-userGender[2].textContent = data[2].gender;
-userGender[3].textContent = data[3].gender;
-userGender[4].textContent = data[4].gender;
-userGender[5].textContent = data[5].gender;
-userGender[6].textContent = data[6].gender;
-userGender[7].textContent = data[7].gender;
-userGender[8].textContent = data[8].gender;
-userGender[9].textContent = data[9].gender;
-userGender[10].textContent = data[10].gender;
-
+elUsers[i].querySelector('.user__gender').textContent = data[i].gender;
 
 // All ip_adress 
-
-const userIpAdress = document.querySelectorAll('.user__address')
-userIpAdress[0].textContent = data[0].ip_address;
-userIpAdress[1].textContent = data[1].ip_address;
-userIpAdress[2].textContent = data[2].ip_address;
-userIpAdress[3].textContent = data[3].ip_address;
-userIpAdress[4].textContent = data[4].ip_address;
-userIpAdress[5].textContent = data[5].ip_address;
-userIpAdress[6].textContent = data[6].ip_address;
-userIpAdress[7].textContent = data[7].ip_address;
-userIpAdress[8].textContent = data[8].ip_address;
-userIpAdress[9].textContent = data[9].ip_address;
-userIpAdress[10].textContent = data[10].ip_address;
+elUsers[i].querySelector('.user__address').textContent = data[i].ip_address;
+}
