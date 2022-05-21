@@ -104,7 +104,7 @@ const data = [
 
   const ul = document.querySelector('ul');
 
-for (let i = 0; i <= 10; i++) {
+for (let i = 0; i <= data.length; i++) {
   
   // Creating and Appending new elements in JS
 
