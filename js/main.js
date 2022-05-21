@@ -1,4 +1,3 @@
-// alert('Let\'s work with DOM on JS!')
 
 const data = [
   { 
@@ -103,21 +102,44 @@ const data = [
 ];
 
 
-const elUsers = document.querySelectorAll('.user');
+  const ul = document.querySelector('ul');
 
-for( let i = 0; i < 11; i++) {
-// All img
-elUsers[i].querySelector('.user__img').src = data[i].src
+for (let i = 0; i <= 10; i++) {
+  
+  // Creating and Appending new elements in JS
 
-// All name
-elUsers[i].querySelector('.user__fullname').textContent = `${data[i].first_name} ${data[i].last_name}`;
+  const li = document.createElement('li');
+  li.className = ('user card d-inline-block col-12 col-lg-4 col-md-6 col-xl-3 px-2');
 
-// All email
-elUsers[i].querySelector('.user__email').textContent = data[i].email
+  const div = document.createElement('div');
+  div.className = ('user__content card-body');
 
-// All gender
-elUsers[i].querySelector('.user__gender').textContent = data[i].gender;
+  const img = document.createElement('img');
+  img.className = ('user__img card-img');
+  img.style.width = ('290');
+  img.style.height = ('100');
+  img.src = data[i].src;
 
-// All ip_adress 
-elUsers[i].querySelector('.user__address').textContent = data[i].ip_address;
+  const h3 = document.createElement('h3');
+  h3.className = ('user__fullname h5 mt-3');
+  h3.textContent = [data[i].first_name] + [data[i].last_name];
+
+  const email = document.createElement('a');
+  email.className = ('user__email h6 text-primary d-block');
+  email.textContent = data[i].email
+
+  const gender = document.createElement('p');
+  gender.className = ('user__gender h6');
+  gender.textContent = data[i].gender;
+
+  const address = document.createElement('p');
+  address.className = ('user__address text-bg-info rounded text-white ps-2');
+  address.textContent = data[i].ip_address;
+
+  div.append(img, h3, email, gender, address);
+  
+  li.append(div);
+  
+  ul.append(li);
+  
 }
