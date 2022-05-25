@@ -60,7 +60,7 @@ const data = [
     first_name: "Angelina",
     last_name: "Manneville",
     email: "amanneville6@lycos.com",
-    gender: "Bigender",
+    gender: "Male",
     ip_address: "176.253.242.10",
   },
   { 
@@ -104,42 +104,48 @@ const data = [
 
   const ul = document.querySelector('ul');
 
+  const template = document.createDocumentFragment()
+
+  function creatTag(tagName, className) {
+    var tagName = document.createElement(tagName)
+    tagName.className = (className)
+    return tagName
+  }
+
+  function user_info(text, data) {
+    text.textContent = data
+    return text
+  }
+
 for (let i = 0; i <= data.length; i++) {
   
   // Creating and Appending new elements in JS
 
-  const li = document.createElement('li');
-  li.className = ('user card d-inline-block col-12 col-lg-4 col-md-6 col-xl-3 px-2');
+  const li = creatTag(`li`,'user card d-inline-block col-12 col-lg-4 col-md-6 col-xl-3 px-2');
 
-  const div = document.createElement('div');
-  div.className = ('user__content card-body');
+  const div = creatTag('div', 'user__content card-body');
 
-  const img = document.createElement('img');
-  img.className = ('user__img card-img');
-  img.style.width = ('290');
-  img.style.height = ('100');
+  const img = creatTag('img', 'user__img card-img');
   img.src = data[i].src;
 
-  const h3 = document.createElement('h3');
-  h3.className = ('user__fullname h5 mt-3');
-  h3.textContent = [data[i].first_name] + [data[i].last_name];
+  const h3 = creatTag('h3', 'user__fullname h5 mt-3');
+  user_info( h3, [data[i].first_name] + ' ' + [data[i].last_name]);
 
-  const email = document.createElement('a');
-  email.className = ('user__email h6 text-primary d-block');
-  email.textContent = data[i].email
+  const email = creatTag('a', 'user__email h6 text-primary d-block');
+  user_info(email,  data[i].email);
 
-  const gender = document.createElement('p');
-  gender.className = ('user__gender h6');
-  gender.textContent = data[i].gender;
+  const gender = creatTag('p', 'user__gender h6');
+  user_info(gender, data[i].gender);
 
-  const address = document.createElement('p');
-  address.className = ('user__address text-bg-info rounded text-white ps-2');
-  address.textContent = data[i].ip_address;
+  const address = creatTag('p', 'user__address text-bg-info rounded text-white ps-2');
+  user_info(address,  data[i].ip_address);
+
 
   div.append(img, h3, email, gender, address);
   
   li.append(div);
   
-  ul.append(li);
+  template.append(li);
   
+  ul.append(template);  
 }
